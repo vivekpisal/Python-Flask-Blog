@@ -1,0 +1,28 @@
+{% extends "base1.html" %}
+
+
+{% block content %}
+<div class="form-row">
+<form style="margin-left: 40%;" method="post" action="/profile">
+<img src="static/{{user.profile}}" style="border-radius: 50%;" height="90px" width="90px"><br><br>
+<label><h5>Username</h5></label>
+<input type="text" class="form-control" value="{{user.email}}" style="width: 150%;" disabled><br>
+<label><h5>Stream</h5></label>
+<input type="text"            name="stream"          class="form-control" 
+     value="{{user.stream if user.stream}}" style="width: 150%;"
+       placeholder="Enter your stream"><br>
+       <br>
+<input type="submit" value="submit" class="btn btn-outline-info"> 
+</form>
+     
+       <form method="post" action="/updatepic" enctype="multipart/form-data">
+  <div class="form-group">
+   
+    <label for="exampleFormControlFile1"><h5>Change Profile Pic</h5></label>
+    <input type="file" name="photos" class="form-control-file" id="exampleFormControlFile1">
+    <input type="submit" value="submit">
+  </div>
+</form>
+
+</div>
+{% endblock %}

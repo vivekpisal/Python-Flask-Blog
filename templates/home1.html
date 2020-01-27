@@ -1,0 +1,21 @@
+{% extends "base1.html"%}
+
+
+
+{% block content %}
+ <a href="/addpost"><button type="button" class="btn btn-outline-primary">Add Post</button></a>
+	{% for post in post %}
+	
+	<div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Post {{loop.index}}</h5>
+    <p class="card-text">{{post.content}}</p>
+    <a href="/edit/{{post.id}}"><button type="button" class="btn btn-outline-primary">Edit</button></a>
+    <a href="/delete/{{post.id}}"><button type="button" class="btn btn-outline-primary">Delete</button></a>
+  </div>
+</div>
+	
+	{% endfor %}
+   
+{% endblock%}
