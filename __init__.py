@@ -140,7 +140,6 @@ def addpost():
 			db.session.add(add)
 			db.session.commit()
 			return redirect(url_for("home"))
-
 		else:
 			return render_template("addpost.html")	
 
